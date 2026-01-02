@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From and Forms Validation</title>
+</head>
+   <style>
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ===== Form Container ===== */
+.container {
+  width: 100%;
+  max-width: 380px;
+  padding: 2rem;
+  background-color: #111;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+}
+
+/* ===== Form Elements ===== */
+input,
+select,
+textarea,
+button {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1.2rem;
+  color: #d2d2d2;
+  background-color: #1a1a1a;
+  border: 1px solid #666;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #5b9bd5;
+  background-color: #222;
+}
+
+/* ===== Buttons ===== */
+button {
+  background-color: #5b9bd5;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4a8ac1;
+}
+
+/* ===== Error / Helper Text ===== */
+small {
+  font-size: 0.95rem;
+  color: #ff4c4c;
+  visibility: hidden;
+  margin-top: -0.5rem;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+/* ===== Utility ===== */
+#hide {
+  display: none;
+}
+
+   </style>
+<body>
+    <form autocomplete="off">
+
+        <input id="name" type="text" placeholder="Enter your name">
+        <div id="hide">
+            <br>
+            <small>Your name should be greater than 2 characters</small>
+        </div>
+        <br><br>
+        <input type="email" placeholder="Enter your email">
+        <br><br>
+        <input type="password" placeholder="Enter your password">
+        <br><br>
+        <select>
+            <option value="male">male</option>
+            <option value="female">female</option>
+            <option value="other">other</option>
+        </select>
+        <br><br>
+        <textarea placeholder="Write something about youself"></textarea>
+        <br><br>
+        <input type="submit">
+        <br><br>
+    </form>
+    <script src="script.js"></script>
+    </body>
+    </html>

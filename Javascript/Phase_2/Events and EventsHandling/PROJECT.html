@@ -1,0 +1,388 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Counter 🔢</title>
+  <style>
+    body{
+      background-color: black;
+      color: white;
+    }
+    .main{
+    padding: 300px;
+    padding-left: 600px;
+    }
+    input{
+      background-color: rgb(65, 65, 65);
+      color: white;
+      font-size: 21px;
+      padding: 10px;
+      border: 1px solid grey;
+    }
+    h1{
+      margin-top: 45px;
+    }
+  </style>
+</head>
+<body> 
+  <div class="main">
+    <input type="text" placeholder="Enter the value"> 
+    <h1>Total character : <span>0</span></h1>
+    </div>
+
+   <script>
+    let inp = document.querySelector("input")
+    let span = document.querySelector("span")
+    inp.addEventListener("input",()=>{
+      let left = 20 - inp.value.length; 
+      span.textContent = left;
+      if (inp.value.length >= 20) {
+      inp.value = inp.value.slice(0, 19);  // sirf first 20 characters rakhna
+    }
+      if(left === 0) {
+        span.style.color = "red";
+      }                                                    
+      else {
+        span.style.color = "white";
+      }
+    })
+   </script>  
+  
+  </body>
+  </html>
+</div> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>This is for when we want to move thr div with the mouse cursor</title>
+  <style>
+    body{
+      background-color: black;
+    }
+    #move{
+      height: 100px;
+      width: 100px;
+      background-color: coral;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <div id="move"></div>
+  <script>
+    let moveDiv = document.querySelector("#move");
+
+
+window.addEventListener("mousemove",(dets)=>{
+   moveDiv.style.top = dets.clientY + "px";
+   moveDiv.style.left = dets.clientX + "px";   
+ });
+
+  </script>
+</body>
+</html> -->
+
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To make and remove line through</title>
+    <style>
+      body {
+        background-color: black;
+        color: rgb(255, 225, 180);
+        user-select: none;
+      }
+      ul {
+        font-size: 44px
+      }
+      .lt{
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      This project is tell us about that how to add and remove the line on the
+      text by just clicking using js.
+    </h1>
+    <h2> >>Click on the text to add or remove the line</h2>
+    <ul>
+      <li>Javascript</li>
+      <li>C</li>
+      <li>C++</li>
+      <li>Java</li>
+      <li>Python</li>
+    </ul>
+    <script>
+    let ul =  document.querySelector("ul")
+      ul.addEventListener("click",(val)=>{
+          val.target.classList.toggle("lt")
+      })
+    </script>
+  </body>
+</html> 
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Making a card</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        background-color: black;
+        color: rgb(255, 255, 255);
+      }
+      #main {
+        padding: 5rem;
+        padding-bottom: revert-layer;
+      }
+      input {
+        font-size: 1.4rem;
+        padding: 5px;
+        margin: 1rem;
+        display: block;
+        background-color: black;
+        color: rgb(198, 198, 198);
+        border-style: none;
+        height: 40px;
+        width: 250px;
+        border: 1px solid rgb(137, 137, 137);
+        border-radius: 5px;
+      }
+
+      .card {
+        max-width: 300px;
+        display: inline-block;
+        margin-top: 40px;
+        margin-left: 40px;
+        margin-bottom: 20px;
+        padding: 20px;
+        border: 1px solid #555;
+        border-radius: 10px;
+      }
+
+      .profile {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 10px;
+
+      }
+
+      .profile img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      .card h3{
+        margin: 10px;
+
+      }
+      .card h5 {
+        font-size: 20px;
+        margin: 10px;
+      }
+      .card p {
+        font-size: 17px;
+        margin: 10px;
+      }
+
+      #submitbtn {
+        border: 0.5 solid #555;
+        background-color: rgb(0, 68, 0);
+        color: rgb(230, 230, 230);
+      }
+    </style>
+    <h1>It's a card generator project in which we have to fill the card details. </h1>
+    <div id="main">
+      <form action="">
+          <input class="setinput" type="text" placeholder="profile pic" />
+        <input class="setinput" type="text" placeholder="name" />
+        <input class="setinput" type="text" placeholder="occupation" />
+        <input class="setinput" type="text" placeholder="info" />
+        <input class="setinput" id="submitbtn" type="submit" />
+      </form>
+    </div>
+
+    <script>
+
+      let form = document.querySelector("form")
+      let inputs = document.querySelectorAll(".setinput")
+      let main = document.querySelector("#main")
+      form.addEventListener("submit", (val)=> {
+        val.preventDefault();
+
+        let card = document.createElement("div")
+        card.classList.add("card")
+        
+        let profile = document.createElement("div")
+        profile.classList.add("profile")
+        
+        let img = document.createElement("img")
+        img.setAttribute("src", inputs[0].value)
+
+        let h3 = document.createElement("h3")
+        h3.textContent = inputs[1].value;
+        
+        let h5 = document.createElement("h5")
+        h5.textContent = inputs[2].value;
+        
+        let p = document.createElement("p")
+        p.textContent = inputs[3].value;
+
+        profile.appendChild(img)
+        card.appendChild(profile)
+        
+        card.appendChild(h3)
+        card.appendChild(h5)
+        card.appendChild(p)
+        
+        main.appendChild(card)
+        
+        inputs.forEach((inp)=>{
+          if(inp.type !== "submit"){
+            inp.value = "";
+          }
+        })
+
+      })
+      </script>
+  </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project to choose a file</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "sans-serif";
+      }
+      #main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100%;
+        background-color: #222;
+      }
+      input {
+        display: none;
+      }
+
+      .btn {
+        padding: 1rem;
+        background-color: goldenrod;
+        color: black;
+        font-size: 2rem;
+        border-radius: 0.7rem;
+        user-select: none;
+      }
+      h1{
+        background-color: #222;
+        color: #e2e2e2;
+        font-weight: 300;
+      }
+    </style>
+  </head>
+  <body>
+      <h1>Iss project me hmne ek bekar se file input dikhne wale ko ek btn se replace kiya hai aur jb bhi hm uss btn pr click krenge to vo main file input pr click hoga..</h1>
+    <div id="main">
+      <input type="file" id="inpfile" />
+      <div class="btn">Upload file</div>
+    </div>
+
+    <script>
+      let btn = document.querySelector(".btn");
+      let inpfile = document.querySelector("#inpfile");
+
+      btn.addEventListener("click", () => {
+        inpfile.click();
+      });
+
+      inpfile.addEventListener("change", (val) => {
+        const file = val.target.files[0];
+        if (file) {
+          btn.textContent = file.name;
+        }
+      });
+    </script>
+  </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project to change the word on screen</title>
+    <style>
+     *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'sans-serif';
+     }
+     #main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100%;
+        background-color: #222;
+    }
+    h1{
+        font-size: 20rem;
+        color: #555;
+        user-select: none; 
+        font-weight: 400;
+        letter-spacing: -1rem;
+    }
+    </style>
+</head>
+<body>
+     
+     <div id="main">
+        <h1>a</h1>
+     </div>
+ 
+    <script>
+        let h1 = document.querySelector("h1");
+        window.addEventListener("keydown", (val)=> {
+           if(val.key === " "){
+            h1.textContent = "SPACE";
+           }
+           else {
+            h1.textContent = val.key
+           }
+        })
+    </script>
+</body>
+</html>-->
+
+

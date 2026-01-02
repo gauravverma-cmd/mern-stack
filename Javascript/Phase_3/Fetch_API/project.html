@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Card (Dark)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="users bg-gray-900 flex items-center justify-center min-h-screen gap-3">
+
+
+    </div>
+    <button id="refreshBtn"
+        class="absolute top-[75%] left-1/2 -translate-x-1/2 flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-full shadow-lg text-lg transition-all transform hover:scale-105 active:scale-95">
+
+     
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9M20 20v-5h-.581m-15.357-2a8.003 8.003 0 0015.357 3" />
+        </svg>
+
+        Refresh
+    </button>
+
+    <script>
+        function getUser() {
+
+            fetch("https://randomuser.me/api/?results=3")
+                .then((rawdata) => rawdata.json())
+                .then((data) => {
+                    document.querySelector(".users").innerHTML = ""
+
+                    data.results.forEach(user => {
+                        // Create card container
+                        let card = document.createElement("div");
+                        card.className = "bg-gray-800 rounded-xl shadow-lg overflow-hidden w-80 border border-gray-700";
+
+                        // Image
+                        let img = document.createElement("img");
+                        img.src = user.picture.large;
+                        img.alt = "User";
+                        img.className = "w-full h-40 object-cover";
+                        card.appendChild(img);
+
+                        // Info wrapper
+                        let info = document.createElement("div");
+                        info.className = "p-5 text-center";
+
+                        // Name
+                        let name = document.createElement("h2");
+                        name.textContent = user.name.first + " " + user.name.last;
+                        name.className = "text-xl font-semibold text-white";
+                        info.appendChild(name);
+
+                        // Role
+                        let role = document.createElement("p");
+                        role.textContent = user.location.city + ", " + user.location.country;;
+                        role.className = "text-gray-400 text-sm";
+                        info.appendChild(role);
+
+                        // let phoneNumber = document.createElement("p");
+                        // phoneNumber.textContent = user.phoneNumber;
+                        // phoneNumber.className = "text-gray-400 text-sm";
+                        // info.appendChild(phoneNumber);
+
+                        // Buttons wrapper
+                        let btnWrapper = document.createElement("div");
+                        btnWrapper.className = "mt-4 flex justify-center gap-3";
+
+                        // Follow button
+                        let followBtn = document.createElement("button");
+                        followBtn.textContent = "Follow";
+                        followBtn.className = "bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition";
+                        btnWrapper.appendChild(followBtn);
+
+                        // Message button
+                        let msgBtn = document.createElement("button");
+                        msgBtn.textContent = "Message";
+                        msgBtn.className = "border border-gray-600 text-gray-300 px-4 py-2 rounded-lg text-sm hover:bg-gray-700 transition";
+                        btnWrapper.appendChild(msgBtn);
+
+                        info.appendChild(btnWrapper);
+                        card.appendChild(info);
+
+                        // Add to body
+                        document.querySelector(".users").appendChild(card);
+
+                    });
+                })
+
+        }
+
+        getUser();
+
+        document.querySelector("#refreshBtn").addEventListener("click", function() {
+            getUser();
+        })
+    </script>
+</body>
+
+</html>
+
+
+

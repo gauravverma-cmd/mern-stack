@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Email & Password Validator</title>
+  <style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #121212;
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: #1e1e1e;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  width: 350px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.form-control {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #cccccc;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+}
+
+input:focus {
+  outline: none;
+  border-color: #5b9bd5;
+  background-color: #333;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #5b9bd5;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #4a8ac1;
+}
+
+small {
+  color: #ff6b6b;
+  display: none;
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+.result {
+ margin-top: 4px;
+ text-align: center;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+     <form autocomplete="off" id="loginForm">  <!--the { autocomplete = "off" } remove all the given suggestion -->
+      <h2>Login Form</h2>
+
+      <div class="form-control">
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="Enter your email" />
+        <small id="emailerror">Error message</small>
+      </div>
+
+      <div class="form-control">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" />
+        <small id="passwordError" >Error message</small>
+      </div>
+
+      <button type="submit">Validate</button>
+      <div class="result">  </div>
+    </form>
+  </div>
+
+  <script>
+    let form = document.querySelector("form")
+    let email = document.querySelector("#email")
+    let password =document.querySelector("#password")
+
+    form.addEventListener("submit",(dets)=>{
+        dets.preventDefault()
+            document.querySelector("#emailerror").textContent = "";
+            document.querySelector("#passwordError").textContent = "";
+
+
+
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?#&_])[A-Za-z\d@$!%*?#&_]{8,}$/;
+          
+         let emailans = emailRegex.test(email.value)
+         let passwordans = passwordRegex.test(password.value)
+         let isValid = true;
+
+         if(!emailans){
+            document.querySelector("#emailerror").textContent = "Email is incorrect"
+            document.querySelector("#emailerror").style.display = "initial"
+           isValid = false
+         }
+
+         if(!passwordans){
+            document.querySelector("#passwordError").textContent = "Password is incorrect"
+            document.querySelector("#passwordError").style.display = "initial"
+          isValid = false
+        }
+          if(isValid){
+           document.querySelector(".result").textContent = "Login Sucessfully";
+          }        
+    })
+  </script>
+</body>
+</html>

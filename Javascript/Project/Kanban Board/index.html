@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <nav>
+            <div class="left">Kanban</div>
+            <div class="right"><button id="toggel-modal">Click to generate</button></div>
+        </nav>
+        <section class="board">
+            <div id="todo" class="task-column">
+                <div class="heading">
+                    <div class="right">To-DO</div>
+                    <div class="left">count</div>
+                </div>
+                <div draggable="true" class="task">
+                    <h2>Task 1</h2>
+                    <p>Description of Task 1</p>
+                    <button>Delete</button>
+                </div>
+            </div>
+            <div id="progress" class="task-column ">
+                <div class="heading">
+                    <div class="right">In Progress</div>
+                    <div class="left">count</div>
+                </div>
+            </div>
+            <div id="done" class="task-column">
+                <div class="heading">
+                    <div class="right">Done</div>
+                    <div class="left">count</div>
+                </div>
+            </div>  
+        </section>
+        <div class="modal add-new-task">
+            <div class="bg"></div>
+            <div class="center">
+                <input autocomplete="off" id="task-input-title" type="text" placeholder="Task Title">
+                <textarea id="task-description" placeholder="Task Description"></textarea>
+                <button id="addd-new-task" class="add-task-button">Add task</button>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

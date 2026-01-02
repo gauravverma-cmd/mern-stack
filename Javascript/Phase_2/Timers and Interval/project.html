@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanished Box</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; /* to stack .van and h1 vertically */
+      }
+
+      .van {
+        height: 200px;
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(42, 42, 42);
+        color: white;
+        border: 1px solid black;
+      }
+
+      h1 {
+        color: white;
+        margin-top: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="van">
+      <p>This div will be vanished in just 3 sec</p>
+    </div>
+    <h1></h1>
+
+    <script>
+      let box = document.querySelector(".van");
+      let h1 = document.querySelector("h1");
+
+      setTimeout(() => {
+        box.style.display = "none";
+        h1.textContent = "See, I told you it will be vanished. 🤷🏻‍♀️";
+      }, 3000);
+    </script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download Progress Bar.⌛</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      .container {
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        color: rgb(173, 173, 173);
+        display: flex;
+        align-items: center;
+        justify-content: center;  
+      }
+      .box {
+        height: 120px;
+        width: 300px;
+        background-color: #111;
+      }
+      p {
+        margin-left: 110px;
+        margin-top: 30px;
+      }
+      .outerDiv {
+        position: relative;
+        height: 10px;
+        width: 150px;
+        border: 1px solid #555;
+        margin-left: 72px;
+        margin-top: 12px;
+        border-radius: 5px;
+      }
+      .innerDiv {
+        position: absolute;
+        height: 10px;
+        max-width: 150px;
+        width: 100%;
+        background-color: white;
+        border-radius: 5px; 
+        transition: transform 0.3s ease;
+      }
+      .counter{
+        margin-left: 135px;
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <p>Downloading...</p>
+        <div class="outerDiv">
+          <div class="innerDiv"></div>
+        </div>
+        <div class="counter">0%</div>
+      </div>
+    </div>
+    <script>
+      let count = 0; 
+      let progress = document.querySelector(".innerDiv")
+      let counter = document.querySelector(".counter")
+      let cis = setInterval(()=>{
+        if(count<= 99){
+          count++;
+          progress.style.width = `${count}%`;
+          counter.textContent = `${count}%` 
+        }
+        else {
+          document.querySelector("p").textContent = "Downloaded";
+          alert("File has been downloded");
+          clearInterval(cis)
+        }
+      },30)
+    </script>
+  </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counting</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+      .timer {
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #timeheading{
+          height: 90px;
+          width: 400px;
+          background-color: #590909;
+          color: burlywood;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>This is a timer  which shows the timeout in seconds..</h1>
+    <div class="timer">
+      <h1 id="timeheading">Timeout in : <span>&nbsp;0</span>&nbsp;sec</h1>
+    </div>
+    <script>
+    let span = document.querySelector("span");
+    let count = 10
+    let si = setInterval(() => {
+        if(count>=0){
+            span.textContent = count;
+            count --;
+        }
+        else clearInterval(si)
+    }, 1000);
+    </script>
+  </body>
+</html> -->

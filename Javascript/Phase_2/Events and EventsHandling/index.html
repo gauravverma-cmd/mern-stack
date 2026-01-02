@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events and EventsHandling🎑</title>
+    <style>
+      * {
+        margin-top: 20px;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 98%;
+        height: 100%;
+      }
+
+      body {
+        background-color: black;
+        color: rgb(255, 255, 255);
+      }
+      #main {
+        padding: 5rem;
+        padding-bottom: revert-layer;
+      }
+      input {
+        font-size: 1.4rem;
+        padding: 5px;
+        margin: 1rem;
+        display: block;
+        background-color: black;
+        color: rgb(198, 198, 198);
+        border-style: none;
+        height: 40px;
+        width: 250px;
+        border: 1px solid rgb(137, 137, 137);
+        border-radius: 5px;
+      }
+
+      .card {
+        max-width: 300px;
+        display: inline-block;
+        margin-top: 40px;
+        margin-left: 40px;
+        margin-bottom: 20px;
+        padding: 20px;
+        border: 1px solid #555;
+        border-radius: 10px;
+      }
+
+      .profile {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 10px;
+      }
+
+      .profile img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      .card h3 {
+        margin: 10px;
+      }
+      .card h5 {
+        font-size: 20px;
+        margin: 10px;
+      }
+      .card p {
+        font-size: 17px;
+        margin: 10px;
+      }
+
+      #submitbtn {
+        border: 0.5 solid #555;
+        background-color: rgb(0, 68, 0);
+        color: rgb(230, 230, 230);
+      }
+
+      #changeColor {
+        height: 300px;
+        width: 300px;
+        background-color: yellow;
+      }
+      #move {
+        position: absolute;
+        height: 10px;
+        width: 10px;
+        background-color: coral;
+        border-radius: 50%;
+      }
+      .navDiv {
+        height: 30%;
+        width: 100%;
+        background-color: black;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 100px;
+        width: 100%;
+        background-color: #444;
+      }
+      .nav a {
+        color: white;
+        text-decoration: none;
+      }
+      #navBtn {
+        padding: 20px 25px;
+        background-color: red;
+        color: white;
+        font-size: 12px;
+        font-weight: 600;
+        border: none;
+      }
+      #navBtn:hover {
+        background-color: rgb(109, 28, 28);
+      }
+
+      .a {
+        height: 80%;
+        width: 80%;
+        background-color: rebeccapurple;
+      }
+      .b {
+        height: 80%;
+        width: 80%;
+        background-color: rgb(132, 128, 38);
+      }
+      .c {
+        height: 80%;
+        width: 80%;
+        background-color: rgb(117, 65, 29);
+      }
+      button {
+        padding: 20px 25px;
+        background-color: rgb(225, 143, 0);
+        color: rgb(0, 0, 0);
+        font-size: 17px;
+        font-weight: 600;
+        border: none;
+        margin-left: 40px;
+      }
+      button:hover {
+        background-color: rgb(177, 113, 3);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Apple</h1>
+    <hr />
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam
+      asperiores cum soluta non commodi architecto maiores ea? Ad cupiditate
+      officiis voluptates tempore impedit, adipisci eius aut deleniti, atque
+      quis molestias. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      Quibusdam, voluptate fuga, impedit asperiores sapiente suscipit, alias
+      pariatur animi accusantium voluptatem ex nulla. Excepturi veritatis minima
+      eveniet, doloribus delectus dolor, molestias earum culpa beatae sunt,
+      vitae quidem sed similique nulla rerum suscipit facilis deserunt qui
+      consectetur! Minima, autem laboriosam a odit, quam omnis obcaecati
+      distinctio voluptate dolor nihil cumque blanditiis ipsa quisquam aliquid
+      aspernatur quasi vel! Officiis quia, fugiat autem nisi saepe, quod
+      distinctio blanditiis labore illum excepturi, esse quas odio. Voluptatum
+      repudiandae, dolorum officia, alias ratione illum nostrum rem enim .
+    </p>
+    <hr />
+    <h2>Banana</h2>
+    <input id="getinput" type="text" placeholder="write to print on console" />
+    <hr />
+    <h1 id="device">Select the device</h1>
+    <select>
+      <option selected disabled>Choose your device</option>
+      <option value="Samsung">Samsung</option>
+      <option value="Oppo">Oppo</option>
+      <option value="Realme">Realme</option>
+      <option value="Apple">Apple</option>
+    </select>
+    <hr />
+
+    <div id="main">
+      <form action="">
+        <input class="setinput" type="text" placeholder="profile pic" />
+        <input class="setinput" type="text" placeholder="name" />
+        <input class="setinput" type="text" placeholder="occupation" />
+        <input class="setinput" type="text" placeholder="info" />
+        <input class="setinput" id="submitbtn" type="submit" />
+      </form>
+    </div>
+    <hr />
+
+    <div id="changeColor"></div>
+    <div id="move"></div>
+    <hr />
+
+    <div class="navDiv">
+      <div class="nav">
+        <a href="">Home</a><a href="">About</a>
+        <button id="navBtn">Click here</button>
+      </div>
+    </div>
+    <hr />
+
+    <div class="a">
+      <div class="b">
+        <div class="c">
+          <button id="testbtn">Click here</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
