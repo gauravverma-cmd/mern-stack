@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elememt Selector</title>
+    <!-- This tell us about that how can we select the entities in the Css  -->
+    <style>
+      /* Class Selector */
+      .red {
+        background-color: red;
+        color: white;
+      }
+      /* ID Selector */
+      #green {
+        background-color: green;
+        color: antiquewhite;
+      }
+      /* child selector  */
+      div > p {
+        background-color: blueviolet;
+        color: blanchedalmond;
+      }
+      /* Decendent Selector  */
+      article p {
+        background-color: rgb(255, 213, 2);
+        color: black;
+      }
+      /* Universal Selector  */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* Pseudo Selector  */
+      a:visited {
+        color: red;
+      }
+      a:active {
+        background-color: tan;
+      }
+      a:link {
+        color: blueviolet;
+      }
+      a:hover {
+        background-color: chocolate;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="red">
+      This is a div.
+      <p>This is a para.</p>
+    </div>
+    <div id="green">
+      This is an another div.
+      <article>
+        <p>This is also a para but in artical..</p>
+      </article>
+    </div>
+    <a href="https://google.com">Visit Google</a>
+  </body>
+</html>

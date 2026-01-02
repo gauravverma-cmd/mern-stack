@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate</title>
+    <!-- This is all about the transition property -->
+    <style>
+        .container{
+            width: 40vw;
+            height: 40vh;
+            background-color: brown;
+        }
+        .box{
+            width: 80px;
+            height: 80px;
+            background-color: burlywood;
+            border-radius: 50%;
+            /* transition-property: background-color, transform;
+            transition-duration: 3s;
+            transition-timing-function: ease-in-out;
+            transition-delay: 1s; */
+            transition: all 3s ease-in-out 1s;  /*This is shortcut for using the transition propety in a single line*/
+        }
+        .translate{
+            transform: translateX(80px) translateY(60px);
+            background-color: cyan;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box translate">
+            
+        </div>
+    </div>
+</body>
+</html>

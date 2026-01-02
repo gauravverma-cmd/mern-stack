@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <style>
+        .box{
+            height: 50px;
+            width: 50px;
+            border: 2px solid rebeccapurple;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgb(244, 208, 160);
+            transform: rotate(55deg);       /*These property help to rotate the box */
+            transform-origin: -0% -0%;
+            /* transform: rotateX(56deg); */
+            /* transform: rotatey(56deg); */
+            /* transform: rotatez(56deg); */
+            /* transform: scale(1.5); TO resize the object */
+            /* transform: translateX(34px);     TO move the  object left and right */
+            /* we can also aplly multiple properties in a row */
+            /* transform: translateX(56px) skew(23deg) translatey(93px);  */
+        }
+
+        .container{
+            width: 100vw;
+            height: 80vh;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="box"> box</div>
+    </div>
+</body>
+</html>

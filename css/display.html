@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display Property</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        border: 5px solid blue;
+        display: inline-block;
+        padding: 45px;
+        margin: 38px;
+        width: 233px;
+      }
+       .box1 {
+        /* display: none; */ /*It means everything has to be removed with space also*/
+         visibility: hidden; /*It means only content will removed but sapce wll not removed */
+      }
+      span {
+        border: 2px solid red;
+        padding: 45px;
+        margin: 38px;
+        width: 233px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box box1">i am a box</div>
+    <div class="box">also a box</div>
+    <span>i am a span</span>
+    <span>i am also a span</span>
+  </body>
+</html>

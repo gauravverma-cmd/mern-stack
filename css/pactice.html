@@ -1,0 +1,170 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    This is to make the only first para in diffrent color
+    <style>
+      /* div:first-child p:first-child {
+            background-color: yellow;
+            color: red;
+        }
+        p {
+            background-color: blue;
+            color: white;
+        } */
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+   
+      .container {
+        background-color: rgba(190, 190, 190, 0.312);
+        width: 30vw;
+        height: 85vh;
+        border: 2px solid black;
+        border-radius: 30px;
+        margin: 23px auto;
+        box-shadow: 5px 5px 5px gray;
+      }
+
+      .image {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: 30vw;
+        height: 40vh;
+        margin: 23px auto;
+      }
+      .image img {
+        width: 25vw;
+        height: 40vh;
+        border-radius: 30px;
+        object-fit: fill;
+      }
+      .tags {
+        padding-left: 30px;
+      }
+      a {
+        margin-left: 44px;
+        font-size: 23px;
+        color: gray;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .main {
+        /* border: 2px solid red; */
+        margin: 23px;
+        height: 25vh;
+      }
+      h1 {
+        /* border: 2px solid blue; */
+        margin: 23px 0;
+        color: gray;
+      }
+      .main p {
+        font-size: 24px;
+        color: gray;
+      }
+      button {
+        width: 200px;
+        background-color: #b8b8ff7e;
+        color: blue;
+        font-size: 17px;
+        border: none;
+        border-radius: 30px;
+        padding: 12px;
+        position: relative;
+        bottom: 34px;
+        left: 130px;
+      }
+    </style>
+  </head>
+  <body> -->
+    <!-- <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates et placeat veniam laboriosam cum eaque pariatur officia amet inventore exercitationem ea ipsa vitae, voluptate blanditiis modi eos repellat. Ullam, placeat.</p>
+        <p>this is a para</p>
+        <p>this is also a para</p>
+    </div>
+    <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates et placeat veniam laboriosam cum eaque pariatur officia amet inventore exercitationem ea ipsa vitae, voluptate blanditiis modi eos repellat. Ullam, placeat.</p>
+        <p>this is a para</p>
+        <p>this is also a para</p>
+    </div> -->
+<!-- 
+    <div class="container">
+      <div class="image">
+        <img src="/Image/ChatGPT Image Jun 5, 2025, 05_54_56 PM.png" />
+      </div>
+      <div class="tags">
+        <a href="">Nature</a>
+        <a href="">Lake</a>
+      </div>
+      <div class="main">
+        <h1>Lorem, ipsum dolor.</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+          repellendus nobis eaque commodi. Tempora molestias soluta odit
+        </p>
+      </div>
+      <button>Read more!</button>
+    </div>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 60vw;
+            height: 80vh;
+            background-color: bisque;
+            position: relative;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            left: 200px;
+            background-color: brown;
+            animation: animationx 1s linear infinite, animateY 1s ease-out infinite alternate;
+           
+            
+        }
+        @keyframes animationx{
+            from{
+              left: 0;
+            }
+            to{
+                 left: 100%;
+             }
+        }
+       
+        @keyframes animateY{
+          from{
+            bottom: 0;
+          }
+          to{
+            bottom: 100%;
+          }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

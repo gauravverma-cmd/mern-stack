@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position_Property</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            background-color: blueviolet;
+            position: absolute;/*absolute position ka mtlb ye apni parent div ya fir jiss div pr position absolute lga hai uske Hisaab say Chalega aur Agar Humne Kahi Bhi position absolute nahi lgaya to ye  html ko hi apna parent man lega Or Phir Uske Hisaab sehi Chalega*/
+            left: 134px;
+        }
+        .box2{
+            background-color: burlywood;
+            position: relative;
+            top: 67px;
+            left: 78px;
+        }
+        .box3{
+            background-color: brown;
+            position: relative;
+            z-index: 1;   /*Z-index ka mtlb hai ki ki dusre box k upper a jaeyega bs iske sath posotion (relative)  honi chaiye*/
+        }
+        .box4{
+            background-color: chocolate;
+            position: sticky;  /*We often used this in nav baar*/
+            top: 0;
+            margin: 0;
+            padding: 0;
+        }
+        .box5{
+            background-color: rgb(255, 17, 17);
+        }
+        .box6{
+            background-color: rgb(0, 194, 253);
+        }
+        .box{
+            height: 633px;
+            width: 80vw;
+            border: 2px solid black;
+            padding: 3px;
+            margin: 3px;
+        }
+        .parent {
+            position: absolute;
+            margin: 34px;
+            padding: 43px;
+            border: 2px solid purple;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+        <div class="box box5"></div>
+        <div class="box box6"></div>
+    </div>
+</body>
+</html>

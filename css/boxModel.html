@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Model</title>
+    <!-- This tell us about that how we can give padding and margin and also understand the box model. 
+     There is a term [Margin collapse] which means the highest margin will remain stay on the Box.( mtlb jiski box ki margin jaida hogi vo margin hi legegi box pr.)-->
+    <style>
+      .box {
+        background-color: blueviolet;
+      }
+      .box1 {
+        color: bisque;
+        margin: 25px;
+        padding: 10px;
+        border: 2px solid black;
+        height: 200px;
+        box-sizing: border-box; /* padding aur border ko mila kr height equal or(200px) krta hai ye*/
+    }
+    .box2 {
+        color: red;
+        margin: 25px;
+        padding: 10px;
+        border: 2px solid black;
+        height: 200px;
+        box-sizing: border-box; /* padding aur border ko mila kr height equal or(200px) krta hai ye*/
+      }
+    </style>
+  </head>
+  <body>
+
+     <div class="box box1">This is a box</div>
+     <div class="box box2">This is also a box</div>
+  
+  </body>
+</html>

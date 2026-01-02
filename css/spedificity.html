@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specificity</title>
+    <style>
+      h1{
+        color: blueviolet;
+      }
+      .yellow{
+        color: yellow;
+      }
+      .cred{
+        color: red important;
+      }
+      .cpurple{
+        color: purple;
+      }
+    </style>
+</head>
+<!-- This is tell us about that which is going to be select for styling -->
+ <!-- Inline style > ID > Class or Atribute > Element > Universal -->
+<body>
+    <h1 class="yellow, cred , cpurple" style="color:palevioletred;">This is an example of Specificity</h1>
+</body>
+</html>

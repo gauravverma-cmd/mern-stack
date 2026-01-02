@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sizing</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-size: 12px;
+      }
+     .box {
+        border: 1px solid black;
+        /* width: 1534px; */
+        width: 80vw;
+        height: 10vh;
+        margin: auto;
+        box-sizing: border-box;
+        background-color: aquamarine;
+      }
+      .container {
+          box-sizing: border-box;
+        border: 1px solid black;
+        width: 80vw;
+        min-height: 80vh;
+        margin: 23px auto;
+        font-size: 18px;
+        background-color: aquamarine;
+      }
+      .container > div {
+       font-size: 2em; /*em ka mtlb uske parent ka size(container) ke kitne multiples jiada hai */
+        /*font-size: 2rem;   rem ka mtlb uske root ka size(html) ke kitne multiples jiada hai*/
+       border: 2px solid red;
+       width: 50%;  
+    }
+     
+       .container > div > div {
+        border: 2px solid blue;
+        width: 50%;
+       }
+      .mycont  {
+        border: 2px solid black;
+        margin: 23px auto;
+        color: black;
+        width: 80vw;
+        font-size: 22px;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">This is a box.</div>
+    <div class="container">
+        <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo aliquam
+        expedita nisi maiores obcaecati sunt sed necessitatibus reprehenderit
+        animi modi eum eius officiis voluptate quis atque velit nihil culpa
+        dolores sapiente, dolorum, mollitia vel. Unde ratione sapiente
+        repudiandae exercitationem. Dolore, maiores. Error itaque saepe soluta
+        delectus ab consequuntur, ipsum neque quae adipisci, illo aliquam
+        consectetur fuga.
+      <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+
+      </div>
+    </div>
+    </div>
+    <div class="mycont">
+        this is a div
+    </div>
+  </body>
+</html>
