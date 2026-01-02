@@ -1,6 +1,6 @@
 import "./App.css";
 
-
+// This shows us that how we can use functions in react To display anything on the screen 
 const App = () => {
   return (
     <>

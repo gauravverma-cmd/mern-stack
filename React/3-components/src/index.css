@@ -1,0 +1,26 @@
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+ html, body{
+ width: 100%;
+ height: 100%;
+ color: white;
+}
+
+.card{
+  background-color: rgb(93, 25, 157);
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+}
+
+.nav{
+  background-color:burlywood;
+  padding: 15px;
+  margin: 7px;
+  color: black;
+  font-size: 30px;
+}
