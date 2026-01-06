@@ -1,7 +1,7 @@
 const Arrow = () => {
   return (
     <div className="text-4xl ml-9 mb-7">
-      <i class="fa-solid fa-arrow-turn-up"></i>
+      <i className="fa-solid fa-arrow-turn-up"></i>
     </div>
   );
 };
