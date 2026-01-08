@@ -18,7 +18,7 @@ const Card = (props) => {
           <h3 className='price'> {props.pay}</h3>
           <p className='city'>{props.location}</p>
           </div>
-          <button className='submit-btn'>Apply Now</button>
+          <button className='submit-btn'>Apply Now.</button>
         </div>
       </div>
   )
