@@ -4,7 +4,7 @@ const App = () => {
   const [a, setA] = useState(20);
   const [userName, setuserName] = useState("Rahul");
   const [arr, setArr] = useState([12, 13, 14]);
-  // SO that who we can chnage the value on the view or screen by using useState
+  // SO that how we can chnage the value on the view or screen by using useState..
   return (
     <div>
       <h1>
