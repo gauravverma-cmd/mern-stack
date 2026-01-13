@@ -1,7 +1,14 @@
+import { useState } from "react";
+
 const App = () => {
+  const [title, setTitle] = useState('')
+  const [description, setDescription] = useState('')
+
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("Form Submit");
+    console.log(title,description);
+    setTitle('')
+    setDescription('')
   };
   return (
     <div className="min-h-screen lg:flex bg-black text-white p-10">
@@ -17,12 +24,20 @@ const App = () => {
             className="w-full border border-gray-700 font-bold bg-gray-900 px-9 py-4 text-2xl rounded placeholder-gray-500 focus:outline-none"
             type="text"
             placeholder="Enter notes heading"
-          />
+            value={title}
+            onChange={(e)=>{
+              setTitle(e.target.value)
+            }}
+ />
 
           <textarea
             className="w-full border flex items-start flex-row  border-gray-700 bg-gray-900 px-9 py-4 h-32 text-2xl rounded placeholder-gray-500 focus:outline-none"
             type="text"
             placeholder="Enter notes detailed"
+            value={description}
+            onChange={(e)=>{
+              setDescription(e.target.value)
+            }}
           />
 
           <button className="w-full bg-gray-700 text-white px-9 py-4 text-2xl rounded hover:bg-gray-600 transition-colors font-bold">
