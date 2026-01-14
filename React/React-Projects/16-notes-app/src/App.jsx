@@ -17,7 +17,7 @@ const App = () => {
     setDescription("");
   };
   return (
-    <div className="min-h-screen lg:flex bg-black text-white p-10">
+    <div className="min-h-screen lg:flex bg-black text-white p-10 overflow-hidden">
       <form
         onSubmit={(e) => {
           submitHandler(e);
@@ -64,17 +64,27 @@ const App = () => {
                   <h1 className="text-4xl text-black leading-tight font-bold">
                     {elem.title}
                   </h1>
-                  <p className="text-gray-800 font-medium mt-4 text-2xl max-h-32 overflow-y-auto">
+                  <p
+                    className="text-gray-800 font-medium mt-4 text-2xl
+              max-h-32 hide-scrollbar overflow-y-auto overflow-x-hidden
+              break-all whitespace-pre-wrap
+              hide-scrollbar"
+                  >
                     {elem.description}
                   </p>
-                </div>  
-                 <button onClick={()=>{
-                    const copyTask = [...task]
-                    console.log(copyTask)
+                </div>
+                <button
+                  onClick={() => {
+                    const copyTask = [...task];
+                    console.log(copyTask);
 
-                    copyTask.splice(idx,1)
-                    setTask(copyTask)
-                 }} className=" bg-red-700 text-white w-fit px-4 py-2 rounded-2xl font-bold">Delete</button>
+                    copyTask.splice(idx, 1);
+                    setTask(copyTask);
+                  }}
+                  className=" bg-red-700 text-white w-fit px-4 py-2 rounded-2xl font-bold"
+                >
+                  Delete
+                </button>
               </div>
             );
           })}
