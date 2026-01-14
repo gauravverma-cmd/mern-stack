@@ -5,7 +5,7 @@ const App = () => {
  localStorage.setItem('city', 'japan')
 
  localStorage.removeItem('city' )
-//  localStorage.clear()  // TO clear all the details in the local Storage
+//  localStorage.clear()  // TO clear all the details in the local Storage.. 
  const user = localStorage.getItem('user')
  const age = localStorage.getItem('age')
  console.log(user);
