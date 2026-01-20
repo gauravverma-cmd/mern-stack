@@ -1,0 +1,21 @@
+import React from 'react'
+
+const Card = (props) => {
+    console.log(props);
+    
+  return (
+    <div>
+        <a href={props.elem.url} target="_blank">
+            <div className="h-60 w-70 overflow-hidden rounded-xl">
+              <img
+                className="h-full w-full object-cover"
+                src={props.elem.download_url}
+              />
+            </div>
+            <h2 className="font-bold text-lg py-4">{props.elem.author}</h2>
+          </a>
+    </div>
+  )
+}
+
+export default Card
