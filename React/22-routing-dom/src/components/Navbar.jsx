@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div className="nav">
-      <h2>Atlatis</h2>
+      <h2>AtlatisCore</h2>
       <div className="nav-left">
         <Link to="/">Home</Link>
         <Link to="/about">AboutUs</Link>
