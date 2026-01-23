@@ -14,6 +14,7 @@ import NotFound from "./pages/NotFound";
 import Kids from "./pages/Kids";
 import Course from "./pages/Course";
 import CourseDetail from "./pages/CourseDetail";
+import Navbar2 from "./components/Navbar2";
 
 const App = () => {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ const App = () => {
   return (
     <div className="h-screen bg-[#1e1e1e] text-white">
       <Navbar />
+      <Navbar2 />
 
       <Routes>
         <Route path="/" element={<Home />} />
