@@ -1,7 +1,7 @@
-import { useEffect } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Routes, Route, Outlet } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
+import Navbar2 from "./components/Navbar2";
 import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
@@ -10,42 +10,46 @@ import Contact from "./pages/Contact";
 import Product from "./pages/Product";
 import Mens from "./pages/Mens";
 import Womens from "./pages/Womens";
-import NotFound from "./pages/NotFound";
 import Kids from "./pages/Kids";
 import Course from "./pages/Course";
 import CourseDetail from "./pages/CourseDetail";
-import Navbar2 from "./components/Navbar2";
+import NotFound from "./pages/NotFound";
 
-const App = () => {
-  const navigate = useNavigate();
-
-
+const Layout = () => {
   return (
-    <div className="h-screen bg-[#1e1e1e] text-white">
+    <div className="min-h-screen bg-[#1e1e1e] text-white">
       <Navbar />
       <Navbar2 />
 
-      <Routes>
+      <Outlet />
+
+      <Footer />
+    </div>
+  );
+};
+
+const App = () => {
+  return (
+    <Routes>
+      {/* Routes WITH navbar/footer */}
+      <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
 
-        {/* This is dynamic routing where we can chnage the details in the course*/}
-        <Route path="/course" element={<Course />}/>
-        <Route path="/course/:courseId" element={<CourseDetail/>} />
+        <Route path="/course" element={<Course />} />
+        <Route path="/course/:courseId" element={<CourseDetail />} />
 
-        <Route path="/product" element={<Product />}> 
-        {/* This is a nested Routing, in which Product has more routes in it */}     
-        <Route path="men" element={<Mens />} />
-        <Route path="women" element={<Womens />} />  
-        <Route path="kids" element={<Kids />} />
-        
+        <Route path="/product" element={<Product />}>
+          <Route path="men" element={<Mens />} />
+          <Route path="women" element={<Womens />} />
+          <Route path="kids" element={<Kids />} />
         </Route>
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      </Route>
 
-      <Footer />
-    </div>
+      {/* 404 route WITHOUT navbar/footer */}
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 };
 

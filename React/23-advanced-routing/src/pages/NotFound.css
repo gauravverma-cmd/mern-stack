@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;500&display=swap");
+
+:root {
+  --primary-color: #faca2e;
+  --eye-pupil-color: #050505;
+  --bg-color: #fff;
+  --text-color: #000;
+  --fs-heading: 36px;
+  --fs-text: 26px;
+  --fs-button: 18px;
+  --fs-icon: 30px;
+  --pupil-size: 30px;
+  --eye-size: 80px;
+  --button-padding: 15px 30px;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Fira Sans", sans-serif;
+}
+
+.error-page {
+  min-height: 100vh;
+  display: flex;
+}
+
+.container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+}
+
+.error-page__heading-title {
+  font-size: var(--fs-heading);
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.error-page__heading-desciption {
+  font-size: var(--fs-text);
+  font-weight: 200;
+}
+
+.error-page__button {
+  text-decoration: none;
+  border: 1px solid var(--primary-color);
+  padding: var(--button-padding);
+  font-size: var(--fs-button);
+  border-radius: 15px;
+  box-shadow: 0px 7px 0px -2px var(--primary-color);
+  transition: 0.3s;
+  color: inherit;
+}
+
+.error-page__button:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+  box-shadow: none;
+}
+
+.eyes {
+  display: flex;
+  gap: 5px;
+}
+
+.eye {
+  width: var(--eye-size);
+  height: var(--eye-size);
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.eye__pupil {
+  width: var(--pupil-size);
+  height: var(--pupil-size);
+  background-color: var(--eye-pupil-color);
+  border-radius: 50%;
+  animation: movePupil 2s infinite ease-in-out;
+}
+
+@keyframes movePupil {
+  0%,100% { transform: translate(0, 0); }
+  25% { transform: translate(-10px, -10px); }
+  50% { transform: translate(10px, 10px); }
+  75% { transform: translate(-10px, 10px); }
+}
+
+.color-switcher {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  font-size: var(--fs-icon);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-color);
+}
