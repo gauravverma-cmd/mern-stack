@@ -1,24 +1,33 @@
 * {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
- html, body{
- width: 100%;
- height: 100%;
- background-color: black;
- color: rgb(224, 224, 224);
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: rgb(224, 224, 224);
 }
-.nav{
+
+.light {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 23px 25px;
+  background-color: #E9C46A;
+  color: black;
+}
+.dark {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 23px 25px;
-    background-color: rgb(74, 26, 120);
+    background-color: #821631;
 }
-
-.nav2{
-    display: flex;
-    gap: 28px;
+.nav2 {
+  display: flex;
+  gap: 28px;
 }
