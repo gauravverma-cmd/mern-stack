@@ -13,13 +13,13 @@ const Login = () => {
   return (  
     <div className="h-screen w-screen flex items-center justify-center">
       <div className="border-2 border-amber-600 p-20 rounded-xl">
-        <form
+        <form 
           onSubmit={(e) => {
             formHandler(e);
           }}
           className="flex flex-col items-center justify-center gap-4"
         >
-          <input
+          <input autoComplete="off"
             value={email}
             onChange={(e) => {
                 setEmail(e.target.value)
@@ -29,7 +29,7 @@ const Login = () => {
             type="email"
             placeholder="Enter your email"
           />
-          <input
+          <input autoComplete="off"
           value={password}
           onChange={(e)=>{
             setPassword(e.target.value)
