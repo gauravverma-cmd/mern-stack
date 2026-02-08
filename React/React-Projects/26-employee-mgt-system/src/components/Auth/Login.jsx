@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Login = () => {
+const Login = ({handleLogin}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const formHandler = (e) => {
@@ -15,6 +15,7 @@ const Login = () => {
       <div className="border-2 border-amber-600 p-20 rounded-xl">
         <form 
           onSubmit={(e) => {
+            handleLogin(email,password)
             formHandler(e);
           }}
           className="flex flex-col items-center justify-center gap-4"
