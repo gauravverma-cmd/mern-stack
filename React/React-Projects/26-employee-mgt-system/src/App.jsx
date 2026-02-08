@@ -1,28 +1,67 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Login from "./components/Auth/Login";
 import EmployeeDashboard from "./components/Dashboard/EmployeeDashboard";
 import AdminDashboard from "./components/Dashboard/AdminDashboard";
-import { getLocalStorage, setLocalStorage } from "./utils/LocalStorage";
+import { AuthContext } from "./context/AuthProvider";
 
 const App = () => {
   const [user, setUser] = useState(null);
+  const [loggedInUserData, setLoggedInUserData] = useState(null);
 
+  const authData = useContext(AuthContext);
+
+  // 🔁 Restore login after refresh
+  // useEffect(() => {
+  //   if (authData) {
+  //     const storedUser = JSON.parse(
+  //       localStorage.getItem("loggedInUser")
+  //     );
+
+  //     if (storedUser) {
+  //       setUser(storedUser.role);
+  //     }
+  //   }
+  // }, [authData]);
+
+  // 🔐 Login handler
   const handleLogin = (email, password) => {
-    if (email == "admin@me.com" && password == "123") {
+    // ADMIN LOGIN
+    if (email === "admin@me.com" && password === "123") {
       setUser("admin");
-      console.log("admin");
-    } else if (email == "user@me.com" && password == "123") {
-      setUser("employee");
-      console.log("user");
-    } else {
-      alert("inavelid credential");
+      localStorage.setItem(
+        "loggedInUser",
+        JSON.stringify({ role: "admin" })
+      );
+      return;
     }
+
+    // EMPLOYEE LOGIN
+    if (authData?.employees) {
+      const employee = authData.employees.find(
+        (e) => e.email === email && e.password === password
+      );
+
+      if (employee) {
+        setUser("employee");
+        setLoggedInUserData(employee);
+        localStorage.setItem(
+          "loggedInUser",
+          JSON.stringify({ role: "employee" })
+        );
+        return;
+      }
+    }
+
+    alert("Invalid credentials");
   };
+
   return (
     <>
       {!user && <Login handleLogin={handleLogin} />}
       {user === "admin" && <AdminDashboard />}
-      {user === "employee" && <EmployeeDashboard />}
+      {user === "employee" && (
+        <EmployeeDashboard data={loggedInUserData} />
+      )}
     </>
   );
 };
