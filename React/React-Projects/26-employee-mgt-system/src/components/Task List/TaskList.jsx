@@ -11,7 +11,7 @@ const colors = [
   "bg-lime-900",
 ];
 
-const TaskList = () => {
+const TaskList = ({data}) => {
   const sliderRef = useRef(null);
 
   let isDown = false;

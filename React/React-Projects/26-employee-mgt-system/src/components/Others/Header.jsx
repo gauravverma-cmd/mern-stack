@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Header = () => {
+const Header = ({data}) => {
+  console.log(data)
   return (
     <div className='flex items-end justify-between'>
         <h1 className='text-2xl font-medium capitalize'>hello <br /> <span className='text-3xl font-semibold capitalize'>gaurav 👋🏻</span></h1>
