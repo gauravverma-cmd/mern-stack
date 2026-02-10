@@ -30,7 +30,7 @@ const App = () => {
           value={city}
           onChange={(e) => setCity(e.target.value)}
           placeholder="Enter city name"
-          className="w-full rounded-xl bg-white/20 px-5 py-4 text-lg font-semibold outline-none placeholder:text-white/70 capitalize"
+          className="w-full rounded-xl bg-white/20 px-6 py-5 text-lg font-semibold outline-none placeholder:text-white/70 capitalize"
         />
         <button
           onClick={showWeather}
