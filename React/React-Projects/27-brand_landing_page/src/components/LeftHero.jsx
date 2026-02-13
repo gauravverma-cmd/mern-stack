@@ -9,7 +9,7 @@ const LeftHero = () => {
            </div> 
            <div className='flex gap-5 mt-5'>
             <button className='bg-red-600 text-white px-5 py-1 rounded font-bold text-lg active:scale-95'>Shop Now</button>
-            <button className='border border-gray-500 border-2 px-5 py-1 rounded font-bold text-lg text-gray-500 active:scale-95'>Cateogry</button>
+            <button className=' border-gray-500 border-2 px-5 py-1 rounded font-bold text-lg text-gray-500 active:scale-95'>Cateogry</button>
            </div>
            <h4 className='capitalize text-md text-gray-500 mt-6'>also avilable on </h4>
           <div className='flex gap-5 mt-4 items-center'>
