@@ -1,4 +1,4 @@
-const Dice_Container = ({ currentDice, rollDice }) => {
+const Dice_Container = ({ resetScore, currentDice, rollDice }) => {
   return (
     <div className="flex justify-center mt-5">
       <div className="flex flex-col gap-4 items-center">
@@ -9,7 +9,7 @@ const Dice_Container = ({ currentDice, rollDice }) => {
           click on the dice to roll
         </p>
         <div className="flex flex-col gap-2 w-full mt-3">
-          <button className="w-full bg-transparent text-black border-2 rounded active:scale-95 cursor-pointer font-bold text-lg py-3 capitalize">
+          <button onClick={resetScore} className="w-full bg-transparent text-black border-2 rounded active:scale-95 cursor-pointer font-bold text-lg py-3 capitalize">
             reset score
           </button>
           <button className="w-full bg-black text-white border-2 rounded font-bold active:scale-95 cursor-pointer text-lg py-3 capitalize">

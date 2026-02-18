@@ -28,7 +28,9 @@ const Game_Area = () => {
      }
      setSelectedNumber(undefined)
   };
-
+ const resetScore = () => {
+  setScore(0)
+ }
   return (
     <div className="h-screen w-full ">
       <div className="flex items-center justify-between py-5 px-8">
@@ -40,6 +42,7 @@ const Game_Area = () => {
         />
       </div>
       <Dice_Container
+        resetScore={resetScore}
         currentDice={currentDice}
         rollDice={rollDice}
       />
