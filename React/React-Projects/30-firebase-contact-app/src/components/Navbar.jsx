@@ -1,6 +1,6 @@
-import React from "react";
 
-const Navbar = () => {
+const Navbar = ({onOpen}) => {
+  // console.log(onOpen)
   return (
     <>
       <div className="bg-orange-100 gap-3 m-4 h-16 flex items-center justify-center text-2xl rounded-2xl font-bold capitalize">
@@ -17,7 +17,7 @@ const Navbar = () => {
             placeholder="search contact" 
           />
         </div>
-        <i className="fa-solid fa-circle-plus text-white text-6xl cursor-pointer hover:text-[#a7a7a7] active:scale-95"></i>
+        <i onClick={onOpen} className="fa-solid fa-circle-plus text-white text-6xl cursor-pointer hover:text-[#a7a7a7] active:scale-95"></i>
       </div>
     </>
   );
