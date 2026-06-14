@@ -12,7 +12,7 @@ object['job'] = "React developer"  // We can also access by this way
 
 
 let aa = "name"
-object[aa]      // This type of aceess wew will use when we want to use the variable which is not define in the object.  
+object[aa]      // This type of aceess we will use when we want to use the variable which is not define in the object.  
 
 console.log(object[aa])
 
