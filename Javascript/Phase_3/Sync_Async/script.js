@@ -37,13 +37,52 @@ function savedPostNikalao(id, cb) {
 
 profileLekarAao("bhereium", function (profileData) {
   console.log(profileData);
-  sarePostLekarAao(profileData._id, function (post) {              
+  sarePostLekarAao(profileData._id, function (post) {
     console.log(post);
     savedPostNikalao(profileData._id, function (savedPost) {
       console.log(savedPost);
     });
   });
 });
+
+// callback Hell (An example of the E-commerce app where you placed the order)
+function creatingInventory(callBack) {
+  setTimeout(() => {
+    console.log("Creating the inventory");
+    callBack();
+  }, 2000);
+}
+function createOrder(callBack) {
+  setTimeout(() => {
+    console.log("Creating an order");
+    callBack();
+  }, 1000);
+}
+function paymentCharge(callBack) {
+  setTimeout(() => {
+    console.log("Charging the payment");
+    callBack();
+  }, 1000);
+}
+function invoiceSend(callBack) {
+  setTimeout(() => {
+    console.log("Sending the invoice");
+    callBack();
+  }, 3000);
+}
+
+function main() {
+  creatingInventory(() => {
+    createOrder(() => {
+      paymentCharge(() => {
+        invoiceSend(() => {
+          console.log("ALl done");
+        });
+      });
+    });
+  });
+}
+main();
 
 // >> Promise - resolve and reject.
 let promise = new Promise(function (resolve, reject) {
@@ -58,11 +97,11 @@ let promise = new Promise(function (resolve, reject) {
 });
 
 promise
-  .then(function (val) {
+  .then(function (val) { //then help us to get the data 
     // agar chla to then kaam krega
     console.log(val);
   })
-  .catch(function (val) {
+  .catch(function (val) {   // catch help us to throw the erorr if the error existed in the code 
     console.log(val); // agar nahi chla to catch kaam krega
   });
 
@@ -85,5 +124,4 @@ async function abcd() {
   }
 }
 
-abcd()
-
+abcd();
