@@ -154,6 +154,7 @@ function restartGame() {
     y: Math.floor(Math.random() * cols),
   };
 
+  
   intervalId = setInterval(() => {
     render();
   }, 200);
