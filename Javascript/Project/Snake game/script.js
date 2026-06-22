@@ -57,6 +57,7 @@ function render() {
   }
   if (head.x < 0 || head.x >= rows || head.y < 0 || head.y >= cols) {
     clearInterval(intervalId);
+    clearInterval(timeintervalId);
 
     modal.style.display = "flex";
     startGame.style.display = "none";
@@ -116,32 +117,61 @@ startButton.addEventListener("click", () => {
 
 restartBtn.addEventListener("click", restartGame);
 
+document.addEventListener("keydown", (event) => {
+  if (
+    event.code === "Space" &&
+    modal.style.display === "flex" &&
+    gameOver.style.display === "flex"
+  ) {
+    event.preventDefault();
+    restartGame();
+  }
+});
 function restartGame() {
+  clearInterval(intervalId);
+  clearInterval(timeintervalId);
+
   blocks[`${food.x}-${food.y}`].classList.remove("food");
+
   snake.forEach((element) => {
     blocks[`${element.x}-${element.y}`].classList.remove("fill");
   });
 
   score = 0;
-  time = `00-00`;
+  time = "00-00";
 
   scoreElement.innerHTML = score;
   timeElement.innerHTML = time;
   highScoreElement.innerHTML = hightScore;
+
   modal.style.display = "none";
   direction = "down";
 
-
   snake = [{ x: 1, y: 3 }];
+
   food = {
     x: Math.floor(Math.random() * rows),
     y: Math.floor(Math.random() * cols),
   };
+
   intervalId = setInterval(() => {
     render();
   }, 200);
-}
 
+  timeintervalId = setInterval(() => {
+    let [min, sec] = time.split("-").map(Number);
+
+    if (sec == 59) {
+      min += 1;
+      sec = 0;
+    } else {
+      sec += 1;
+    }
+
+    time = `${min}-${sec}`;
+    timeElement.innerHTML = time;
+  }, 1000);
+}
 addEventListener("keydown", (event) => {
   if (event.key == "ArrowUp") {
     direction = "up";
