@@ -6,6 +6,7 @@ import Beta from './components/Beta'
 const AlphaWithCardLook =  withCardLook(Alpha)
 const BetaWithCardLook =  withCardLook(Beta)
 const App = () => {
+  // ReUse complex logic and complex UI
   return (
      <>
      <AlphaWithCardLook />
