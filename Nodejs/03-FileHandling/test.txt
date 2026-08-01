@@ -1,0 +1,2 @@
+Hii there this is first time that i am creating a file in node js
+This is the updated file (it is done by appendFileSync)
