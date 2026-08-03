@@ -95,3 +95,5 @@ console.log("The birthTime of the file is : ",stats.birthtime);
 console.log("The modification time is : ",stats.mtime);
 
 // 10. Making and delting the folder 
+fs.mkdirSync('./new_folder')
+console.log("Folder made");
