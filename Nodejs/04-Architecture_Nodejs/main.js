@@ -1,6 +1,6 @@
 const { error } = require("console");
 const fs = require("fs")
- 
+const os = require("os") 
 // Blocking operation ( Sync )
 // function blocking_operation (){
 //     console.log(1);
@@ -29,3 +29,11 @@ function non_blocking_operation (){
     console.log(5);
 }
 non_blocking_operation()
+// knowing the cpu details by os.cpu() fucntion
+
+// model name
+const cpuInfo = os.cpus()[0];
+console.log("Your Exact CPU Model is:");
+console.log(cpuInfo.model); 
+// No of cores but not the hardware cores 
+console.log(os.cpus().length);
