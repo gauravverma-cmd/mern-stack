@@ -1,0 +1,14 @@
+{
+  "name": "08-made_sever_with_express",
+  "version": "1.0.0",
+  "description": "\"This is about how we can made server in Express\" ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
