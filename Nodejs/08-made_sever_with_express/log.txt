@@ -6,3 +6,7 @@
 1786096626337 : GET: /about?name=Shruti&age=22 : Request Received
 1786096626486 : GET: /about?name=Shruti&age=22 : Request Received
 1786096632363 : GET: /about : Request Received
+1786165243218 : GET: / : Request Received
+1786165244740 : GET: /favicon.ico : Request Received
+1786165251033 : GET: /about : Request Received
+1786165257663 : GET: /aboutus : Request Received

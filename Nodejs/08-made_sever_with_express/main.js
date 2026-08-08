@@ -14,16 +14,16 @@ app.use((req, res, next) => {
 });
 
 app.get("/", (req, res) => {
-  res.end("This is a Home page");
+  res.send("This is a Home page");
 });
 
 app.get("/about", (req, res) => {
-  res.end(
+  res.send(
     `This is an About page \n Hii this is ${req.query.name || "Guest"} \n and i am ${req.query.age || "unknown"}`,
   );
 });
 app.get("/contact", (req, res) => {
-  res.end("This is a contact us page");
+  res.send("This is a contact us page");
 });
 
 app.listen(8000, () => console.log("Server Started"));
