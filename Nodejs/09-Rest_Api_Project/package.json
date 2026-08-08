@@ -1,0 +1,14 @@
+{
+  "name": "09-rest_api_project",
+  "version": "1.0.0",
+  "description": "\"This is a project in we learn how to make Rest APi\"",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
