@@ -1,8 +1,12 @@
 const express = require("express");
 const app = express();
 const PORT = 8000;
-const users = require("./MOCK_DATA.json");
+let users = require("./MOCK_DATA.json");
+const fs = require("fs");
 // Home page
+
+app.use(express.urlencoded({ extended: false }));
+
 app.get("/", (req, res) => {
   res.send("This is a Home page");
 });
@@ -14,23 +18,53 @@ app.get("/users", (req, res) => {
 // TO show users in api formate
 app.get("/api/users", (req, res) => {
   return res.json(users);
-});                            
-// TO show, edit and delete only user by a id. 
-app.route("/api/users/:id").get((req, res) => {
-    const id =  Number(req.params.id)
-    const user = users.find(user => user.id === id)
-    return res.json(user)
-})
-.patch((req,res)=>{
-    // TO do edit the user
-    return res.json({status : "pending"})
-})
-.delete((req,res)=> {
-    // TO do delete the user
-    return res.json({status : "pending"})
-})
-.post((req,res)=> {
-    // TO do create a new user
-    return res.json({status : "pending"})
-})
-app.listen(PORT, () => console.log("Server starts"));   
+});
+// TO show, edit and delete only user by a id.
+app
+  .route("/api/users/:id")
+  .get((req, res) => {
+    const id = Number(req.params.id);
+    const user = users.find((user) => user.id === id);
+    return res.json(user);
+  })
+  .patch((req, res) => {
+    const id = Number(req.params.id)
+    const body = req.body;
+    const  user = users.find((user)=> user.id === id)
+    Object.assign(user,body)
+    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users,null,2), (err)=> {
+      if(err){
+        console.log(err)
+        return res.status(500).json({status: "Error"})
+      }
+      return res.json({ status: "Success", user});
+    })
+  })
+  .delete((req, res) => {
+    const id = Number(req.params.id);
+    users = users.filter((user)=> user.id !== id)
+    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users,null,2), (err)=> {
+      if(err){
+        console.log(err);
+        return res.status(500).json({status: "Error"})
+      }
+      return res.json({ status: "Success", users });
+    })
+  });
+  // Post req
+app.post("/api/users", (req, res) => {
+  const body = req.body;
+  const newUser = {id: users.length + 1, ...body,};
+  users.push(newUser);
+  fs.writeFile("./MOCK_DATA.json", JSON.stringify(users, null, 2), (err) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json({ status: "Error" });
+    }
+    return res.json({
+      status: "Success",
+      user: newUser,
+    });
+  });
+});
+app.listen(PORT, () => console.log("Server starts"));

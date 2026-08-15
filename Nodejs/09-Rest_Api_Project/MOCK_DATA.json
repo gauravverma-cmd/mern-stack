@@ -8998,5 +8998,32 @@
     "gender": "Female",
     "ip_address": "15.170.7.13",
     "job_title": "Computer Systems Analyst III"
+  },
+  {
+    "id": 1001,
+    "first_name": "Jhon",
+    "last_name": "Dervin",
+    "email": "jhondervin@1234.org",
+    "gender": "Male",
+    "ip_address": "192.47.3.5",
+    "job_title": "Graphics Designer"
+  },
+  {
+    "id": 1002,
+    "first_name": "Melina",
+    "last_name": "lorvin",
+    "email": "jhondervin@1234.org",
+    "gender": "Female",
+    "ip_address": "192.47.3.5",
+    "job_title": "Graphics Designer"
+  },
+  {
+    "id": 1003,
+    "first_name": "jenifer",
+    "last_name": "lorvin",
+    "email": "jhondervin@1234.org",
+    "gender": "Female",
+    "ip_address": "192.47.3.5",
+    "job_title": "UI & Ux Designer"
   }
 ]
