@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.9.3"
+  },
+  "name": "11-mongodb-connection",
+  "version": "1.0.0",
+  "description": "\"This is all about how we can connect MongoDb to nodejs\" ",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
