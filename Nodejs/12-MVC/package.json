@@ -1,0 +1,16 @@
+{
+  "name": "12-mvc",
+  "version": "1.0.0",
+  "description": "\"This is all about model view controller\"",
+  "main": "mian.js",
+  "scripts": {
+   "start": "nodemon main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.9.3",
+    "nodemon": "^3.1.14"
+  }
+}
