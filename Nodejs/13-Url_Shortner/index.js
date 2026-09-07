@@ -8,6 +8,9 @@ const URL = require("./models/url");
 
 connectToMongoDb("mongodb://127.0.0.1:27017/urlShortner").then(() => console.log("MongoDb Connected"))
 app.use(express.json())
+app.get('/test',(req,res)=> {
+    return res.send("<h1>Hii this Server side rendering</h1>")
+})
 app.use("/url", urlRoute)
 app.get('/:shortId',async(req,res)=> {
  const shortId = req.params.shortId;
