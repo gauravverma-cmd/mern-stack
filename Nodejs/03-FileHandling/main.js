@@ -1,6 +1,7 @@
 const fs = require("fs");
 const fsPromises = fs.promises;
-
+// const os = require("os") 
+// console.log(os.cpus().length)   // to know how many server's worker did you or your computer have 
 // 1. Create / Write
 fs.writeFileSync(
   "./test.txt",
@@ -10,7 +11,7 @@ fs.writeFileSync(
 // 2. Update
 fs.appendFileSync(
   "./test.txt",
-  "\nThis is the updated file (it is done by appendFileSync)"
+  `\nThis is the updated file (it is done by appendFileSync) - ${new Date().toDateString()}\n`
 );
 
 // 3. Read
@@ -94,6 +95,7 @@ console.log("The directory of the file is : ",stats.isDirectory());
 console.log("The birthTime of the file is : ",stats.birthtime);
 console.log("The modification time is : ",stats.mtime);
 
-// 10. Making and delting the folder 
-fs.mkdirSync('./new_folder')
-console.log("Folder made");
+
+// 10. Making a folder safely
+fs.mkdirSync('./new_folder', { recursive: true });
+console.log("Folder ready");
