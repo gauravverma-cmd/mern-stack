@@ -1,0 +1,14 @@
+{
+  "name": "10-middleware",
+  "version": "1.0.0",
+  "description": "\"This is about how we can use middleware\"",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
