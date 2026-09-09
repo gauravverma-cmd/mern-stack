@@ -1,0 +1,4 @@
+To to connect Mongodb with node js we have to follow sum steps :-
+Step 1 - First make a Schema. 
+Step 2 - Then make a model to use that Schema. 
+Step 3 - Then just simple connect Mongodb to Nodejs. 
