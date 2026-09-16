@@ -1,0 +1,14 @@
+{
+  "name": "06-url",
+  "version": "1.0.0",
+  "description": "\"This is all about the functionality of url\" ",
+  "main": "main.js",
+  "scripts": {
+     "start": "node main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "url": "^0.11.4"
+  }
+}
