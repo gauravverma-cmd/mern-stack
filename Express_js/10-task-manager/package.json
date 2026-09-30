@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "nodemon": "^3.1.14",
+    "uuid": "^14.0.2"
+  },
+  "name": "10-task-manager",
+  "version": "1.0.0",
+  "description": "\"This is a tak manager where we will going to do the crud operation\" ",
+  "main": "server.js",
+  "devDependencies": {},
+  "scripts": {
+    "start":  "nodemon --ignore src/utils/data/ src/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
